@@ -186,3 +186,5 @@ pm2 save
 ## 📄 Lisans
 
 Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır. Dilediğiniz gibi geliştirebilir ve özelleştirebilirsiniz.
+
+Benden aldığınız altyapılarla sunuculara satış yapmanıza karşıyım. Tabii ki seçim yine size kalmış.
