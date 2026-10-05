@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+node_modules
+
+# Sensitive configurations & environment files
+Settings.json
+.env
+.env.local
+.env.production
+
+# PM2 & Application logs
+logs/
+*.log
+
+# Dynamic workspaces & backups
+src/Workspaces/
+src/Backups/
+scratch/

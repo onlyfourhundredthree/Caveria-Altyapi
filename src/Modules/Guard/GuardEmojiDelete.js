@@ -1,0 +1,27 @@
+const { AuditLogEvent } = require("discord.js");
+const GuardManager = require("../../Core/Handlers/GuardManager");
+const { applyPunishment, sendGuardLog } = require("../../Core/Handlers/GuardUtils");
+
+module.exports = async (emoji) => {
+    const guild = emoji.guild;
+    const now = Date.now();
+
+    const audit = await guild.fetchAuditLogs({ type: AuditLogEvent.EmojiDelete, limit: 1 }).catch(() => null);
+    if (!audit) return;
+    const entry = audit.entries.first();
+    if (!entry || entry.target.id !== emoji.id || entry.createdTimestamp < (now - 5000)) return;
+
+    const executor = entry.executor;
+    const member = await guild.members.fetch(executor.id).catch(() => null);
+
+    if (executor.id === client.user.id || executor.id === guild.ownerId) return;
+
+    const check = await GuardManager.checkLimit(guild.id, executor.id, "emojiDelete");
+    const settings = await GuardManager.getSettings(guild.id);
+    if (GuardManager.isWhitelisted(executor.id, member, "emojiDelete", settings)) return;
+
+    if (check && check.limited) {
+        await applyPunishment(guild, member, executor, check.action, "Emoji Silme Limiti");
+        sendGuardLog(guild, executor, "Emoji Silme", `Emoji: **${emoji.name}**\nİşlem: **Limit aşıldı.**`);
+    }
+};

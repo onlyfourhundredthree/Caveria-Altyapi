@@ -1,0 +1,6 @@
+{
+    "COMMON": {
+        "LANGUAGE_CHANGED": "Diliniz başarıyla güncellendi.",
+        "LANGUAGE_ALREADY_SET": "Diliniz zaten **{lang}** olarak ayarlı."
+    }
+}

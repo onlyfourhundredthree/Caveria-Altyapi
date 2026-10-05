@@ -1,0 +1,49 @@
+{
+  "name": "caveria-bot",
+  "version": "2.0.0",
+  "description": "Enterprise-grade Discord Server Management, Moderation, Security & Economy Infrastructure",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js",
+    "restart": "pm2 restart ecosystem.config.js",
+    "reload": "pm2 reload ecosystem.config.js",
+    "logs": "pm2 logs caveria-bot",
+    "monit": "pm2 monit",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.962.0",
+    "@discordjs/voice": "^0.19.2",
+    "@napi-rs/canvas": "^0.1.88",
+    "acorn": "^8.16.0",
+    "acorn-walk": "^8.3.5",
+    "archiver": "^7.0.1",
+    "axios": "^1.18.1",
+    "bson": "^6.10.4",
+    "canvas": "^3.2.1",
+    "cron": "^4.3.3",
+    "dayjs": "^1.11.18",
+    "deepmerge-ts": "^7.1.5",
+    "discord.js": "^14.27.0",
+    "ffmpeg-static": "^5.3.0",
+    "libsodium-wrappers": "^0.8.4",
+    "moment": "^2.30.1",
+    "moment-duration-format": "^2.3.2",
+    "moment-timezone": "^0.6.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.23.0",
+    "ms": "^2.1.3",
+    "node-cron": "^4.2.1",
+    "node-edge-tts": "^1.2.10",
+    "node-fetch": "^2.7.0",
+    "opusscript": "^0.0.8",
+    "play-dl": "^1.9.7",
+    "pm2": "^6.0.14",
+    "serialize-javascript": "^7.0.5",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9"
+  }
+}
